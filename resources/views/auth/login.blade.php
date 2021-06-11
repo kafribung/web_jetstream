@@ -32,7 +32,7 @@
                 </label>
                 <div>
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="/register">
-                        {{ __('Regiter') }}
+                        {{ __('Register') }}
                     </a>
                 </div>
             </div>
