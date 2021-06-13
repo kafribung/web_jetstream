@@ -23,14 +23,13 @@ class Category extends Component
 
     public function create()
     {
-        $this->openCloseModal();
         $this->resetFields();
+        $this->openCloseModal();
     }
 
     public function storeOrUpdate()
     {
-        $this->openCloseModal();
-        $data=  $this->validate();
+        $data= $this->validate();
         CategoryModel::updateOrCreate(
             ['id' => $this->category_id],
             $data,
