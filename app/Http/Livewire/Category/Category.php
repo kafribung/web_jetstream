@@ -8,7 +8,7 @@ use App\Models\Category as CategoryModel;
 class Category extends Component
 {
     // Data
-    public $modal = false;
+    public $modal = false, $modalDelete = false;
     public $category_id, $name;
 
     protected $rules = [
@@ -45,6 +45,27 @@ class Category extends Component
         session()->flash('msg', $this->category_id? 'Category update success' : 'Category add successfully');  
         $this->resetFields();
         $this->openCloseModal();
+    }
+
+    public function delete($id)
+    {
+        $this->openCloseModalDelete();
+        $this->category_id = $id;
+    }
+
+    public function destroy()
+    {
+        $this->openCloseModalDelete();
+        $category = CategoryModel::findOrFail($this->category_id);
+        $category->delete();
+        $this->resetFields();
+        session()->flash('msg', 'Category delete success');
+    }
+
+    // Modal Delete
+    public function openCloseModalDelete()
+    {
+        $this->modalDelete = !$this->modalDelete;
     }
 
     // Modal
