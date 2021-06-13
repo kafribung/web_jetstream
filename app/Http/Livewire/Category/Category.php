@@ -27,6 +27,14 @@ class Category extends Component
         $this->openCloseModal();
     }
 
+    public function edit($id)
+    {
+        $this->openCloseModal();
+        $category = CategoryModel::findOrFail($id);
+        $this->name = $category->name;
+        $this->category_id = $id;
+    }
+
     public function storeOrUpdate()
     {
         $data= $this->validate();
