@@ -15,9 +15,16 @@
                         @if ($modal)
                             @include('livewire.category.create')
                         @endif
+                        {{-- Flash Massage --}}
+                        @if (session('msg'))
+                        <div class="bg-green-300 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                            <strong class="font-bold">Success!</strong>
+                            <span class="block sm:inline">{{ session('msg') }}.</span>
+                        </div>
+                        @endif
                         <div class="bg-white shadow-md rounded my-6">
                             {{-- Button Create --}}
-                            <button wire:click=createOrUpdate class="w-4 mr-2 transform hover:text-blue-500 hover:scale-110">
+                            <button wire:click=create class="w-4 mr-2 transform hover:text-blue-500 hover:scale-110">
                                 <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
