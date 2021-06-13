@@ -13,7 +13,7 @@
                     <div class="w-full lg:w-5/6">
                         {{-- Modal --}}
                         @if ($modal)
-                            @include('')
+                            @include('livewire.category.create')
                         @endif
                         <div class="bg-white shadow-md rounded my-6">
                             {{-- Button Create --}}
