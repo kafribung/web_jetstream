@@ -42,7 +42,7 @@ class Category extends Component
             ['id' => $this->category_id],
             $data,
         );
-        session()->flash('msg', 'Category added successfully');  
+        session()->flash('msg', $this->category_id? 'Category update success' : 'Category add successfully');  
         $this->resetFields();
         $this->openCloseModal();
     }
@@ -57,6 +57,7 @@ class Category extends Component
     public function resetFields()
     {
         $this->name = '';
+        $this->category_id = '';
     }
 
 }

@@ -13,7 +13,7 @@
                     <div class="w-full lg:w-5/6">
                         {{-- Modal --}}
                         @if ($modal)
-                            @include('livewire.category.create')
+                            @include('livewire.category.createOrEdit')
                         @endif
                         {{-- Flash Massage --}}
                         @if (session('msg'))
