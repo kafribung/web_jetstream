@@ -10,6 +10,6 @@ class Category extends Component
     public function render()
     {
         $categories = CategoryModel::get();
-        return view('livewire.category.category', compact($categories));
+        return view('livewire.category.category', ['categories' => $categories]);
     }
 }
