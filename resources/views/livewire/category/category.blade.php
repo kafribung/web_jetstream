@@ -11,7 +11,17 @@
             <div class="overflow-x-auto">
                 <div class="min-w-screen flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
                     <div class="w-full lg:w-5/6">
+                        {{-- Modal --}}
+                        @if ($modal)
+                            @include('')
+                        @endif
                         <div class="bg-white shadow-md rounded my-6">
+                            {{-- Button Create --}}
+                            <button wire:click=createOrUpdate class="w-4 mr-2 transform hover:text-blue-500 hover:scale-110">
+                                <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </button>
                             <table class="min-w-max w-full table-auto">
                                 <thead>
                                     <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
