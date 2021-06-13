@@ -29,6 +29,7 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('dashboard', function(){
         return view('dashboard');
     })->name('dashboard');
+    
     // Category
     Route::get('category', Category::class)->name('category');
 });

@@ -3,11 +3,13 @@
 namespace App\Http\Livewire\Category;
 
 use Livewire\Component;
+use App\Models\Category as CategoryModel;
 
 class Category extends Component
 {
     public function render()
     {
-        return view('livewire.category.category');
+        $categories = CategoryModel::get();
+        return view('livewire.category.category', compact($categories));
     }
 }
