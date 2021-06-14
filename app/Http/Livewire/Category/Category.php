@@ -4,12 +4,19 @@ namespace App\Http\Livewire\Category;
 
 use Livewire\Component;
 use App\Models\Category as CategoryModel;
+use Livewire\WithPagination;
 
 class Category extends Component
 {
+    use WithPagination;
     // Data
     public $modal = false, $modalDelete = false;
-    public $category_id, $name;
+    public $category_id, $name, $search= '';
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 
     protected $rules = [
         'name' => ['required', 'min:3', 'max:10']
@@ -17,7 +24,7 @@ class Category extends Component
 
     public function render()
     {
-        $categories = CategoryModel::paginate(3);
+        $categories = CategoryModel::where('name', 'LIKE', '%' . $this->search .'%')->paginate(3);
         return view('livewire.category.category', ['categories' => $categories]);
     }
 
