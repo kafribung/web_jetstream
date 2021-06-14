@@ -17,7 +17,7 @@ class Category extends Component
 
     public function render()
     {
-        $categories = CategoryModel::get();
+        $categories = CategoryModel::paginate(3);
         return view('livewire.category.category', ['categories' => $categories]);
     }
 
