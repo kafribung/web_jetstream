@@ -12,7 +12,7 @@
                     </h3>
                     <div class="mt-2">
                         <x-jet-label for="name" value="{{ __('Name') }}" />
-                        <input type="text" id="name" wire:model="name" value="{{ old('name') }}" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" autofocus autocomplete>
+                        <x-jet-input id="name" wire:model="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                         @error('name')
                             <small  class="text-red-500 text-sm">{{ $message }}</small>
                         @enderror
