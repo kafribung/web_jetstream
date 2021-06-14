@@ -11,4 +11,12 @@ class Category extends Model
 
     protected $fillable = ['name'];
     public $timestamps = false;
+
+    /**
+     * Relation one to many (Inventory).
+     */
+    public function invetories()
+    {
+        return $this->hasMany(Inventory::class);
+    }
 }
