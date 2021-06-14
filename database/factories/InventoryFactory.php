@@ -22,7 +22,10 @@ class InventoryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name'  => $this->faker->streetName(),
+            'count' => random_int(1,10),
+            'price' => 50000,
+            'category_id' => rand(17,19),
         ];
     }
 }
