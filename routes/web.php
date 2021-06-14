@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Category\Category;
+use App\Http\Livewire\Inventory\Inventory;
 use  App\View\Components\AppLayout;
 use Illuminate\Support\Facades\Route;
 
@@ -32,4 +33,7 @@ Route::middleware(['auth', 'verified'])->group(function(){
     
     // Category
     Route::get('category', Category::class)->name('category');
+
+    // Inventory
+    Route::get('inventory', Inventory::class)->name('inventory');
 });
